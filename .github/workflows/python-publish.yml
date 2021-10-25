@@ -40,3 +40,10 @@ jobs:
         run: |
           python -m build
           python -m twine upload --repository testpypi dist/*
+      - name: Upload version
+        uses: hmanzur/actions-set-secret@v2.0.0
+        with:
+          name: 'MY_SECRET_NAME'
+          value: 'Lorem ipsun dolor simit'
+          repository: stegallo/luserta
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
